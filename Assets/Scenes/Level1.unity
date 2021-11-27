@@ -55122,6 +55122,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e55149ba6f4d00741984987e258c3378, type: 3}
+--- !u!4 &1837300032 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 1837300031}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1837853106 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9100508158649072905, guid: e348e7143b6247b488737e4be26fb038, type: 3}
@@ -62134,11 +62139,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e348e7143b6247b488737e4be26fb038, type: 3}
---- !u!4 &2045680238 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4274653050354540, guid: e55149ba6f4d00741984987e258c3378, type: 3}
-  m_PrefabInstance: {fileID: 1837300031}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2048211960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65409,7 +65409,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 814656785}
-  - {fileID: 2045680238}
+  - {fileID: 1837300032}
   m_Father: {fileID: 1908552949}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -53.348, y: -138.022, z: -7.138}
