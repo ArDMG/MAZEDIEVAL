@@ -9,7 +9,7 @@ public class ArrowMovement : MonoBehaviour
     public Vector3 scale;
     public Vector3 position;
     private int life = 1;
-    public float Speed;
+    public float Speed = 0.01f;
     public int Damage;
     public float liveCanon = 1f;
 
@@ -22,8 +22,8 @@ public class ArrowMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Arrow Move");
-        transform.position += new Vector3(0.03f, 0f, 0f) * Speed;
+        //Debug.Log("Arrow Move");
+        transform.position += new Vector3(-0.1f, 0f, 0f) * Speed;
 
         liveCanon -= Time.deltaTime;
         if (liveCanon < 0)
@@ -31,17 +31,11 @@ public class ArrowMovement : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            transform.localScale = new Vector3(2f, 2f, 2f);
-        }
-
 
     }
     void MoveArrow()
     {
         //Move
-        Debug.Log("Arrow Start");
         transform.localScale = scale;
         transform.position = position;
         initialSpeed = Speed;

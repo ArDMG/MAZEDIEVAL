@@ -22,7 +22,7 @@ public class StartController : MonoBehaviour
 
         if(Physics.Raycast(transform.position, Vector3.forward, out hit,4f))
         {
-            Debug.Log("Time Start");
+            //Debug.Log("Time Start");
         }
     }
 

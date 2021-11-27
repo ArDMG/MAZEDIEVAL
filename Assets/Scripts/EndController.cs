@@ -42,7 +42,7 @@ public class EndController : MonoBehaviour
 
     private void UnlockDoor()
     {
-        Door.transform.eulerAngles = new Vector3(0f, -90f, 0f);
+        Door.transform.eulerAngles = new Vector3(0f, 90f, 0f);
         //Door.transform.eulerAngles = new Vector3(0, degreesPerSecond, 0) * Time.deltaTime;
 
     }
