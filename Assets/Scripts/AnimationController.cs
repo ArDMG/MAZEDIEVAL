@@ -16,6 +16,7 @@ public class AnimationController : MonoBehaviour
     private bool isGrounded = true;
     //
     private bool CrouchActive = false;
+    public Life Life;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,7 @@ public class AnimationController : MonoBehaviour
         WalkRight();
         Jump();
         Attack();
+        Death();
         Crouch();
         WalkFowardCrouch();
         if (Input.GetKeyDown(KeyCode.Space))
@@ -52,6 +54,8 @@ public class AnimationController : MonoBehaviour
             }
 
         }
+        Debug.Log(Life.HeartCount);
+
     }
 
     void WalkFoward()
@@ -125,6 +129,15 @@ public class AnimationController : MonoBehaviour
     
     }
 
+    public void Death()
+    {
+        if (Life.HeartCount == 0)
+        {
+            anim.Play("death");
+            Debug.Log(Life.HeartCount);
+        }
+    }
+
     /// End Normal Moves
     /// //////////////////////
     /// Crocuh Move
@@ -154,5 +167,7 @@ public class AnimationController : MonoBehaviour
             CrouchActive = false;
         }
     }
+
+
 }
 

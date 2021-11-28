@@ -12,6 +12,7 @@ public class ArrowMovement : MonoBehaviour
     public float Speed = 0.01f;
     public int Damage;
     public float liveCanon = 1f;
+    public GameObject Arrow;
 
     // Start is called before the first frame update
     void Start()

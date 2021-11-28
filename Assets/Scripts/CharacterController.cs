@@ -93,7 +93,6 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-
     private void UseItem()
     {
         GameObject key = mgInventory.GetInventoryOne();

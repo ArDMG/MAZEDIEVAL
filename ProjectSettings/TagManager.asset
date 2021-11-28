@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Key
   - MainCharacter
+  - Arrow
   layers:
   - Default
   - TransparentFX
