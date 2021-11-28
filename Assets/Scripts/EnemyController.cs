@@ -12,27 +12,29 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float rangeOfView = 1f;
     private bool iSeeU = false;
 
-    enum TypesMoments { Mlineal, Mrotate}
+    enum TypesMoments { Mlineal, Mrotate }
     [SerializeField] private TypesMoments typeMovements;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find( "Player" );
+        player = GameObject.Find("MainCharacter");
 
         iSeeU = false;
     }
 
     // Update is called once per frame
-    void FixUpdate()
+    void Update()
     {
         // MoveEnemy(Vector3.forward);
-       if (Vector3.Distance(transform.position, player.transform.position)<= rangeOfView)
+        if (Vector3.Distance(transform.position, player.transform.position) <= rangeOfView)
         {
             iSeeU = true;
-        }else { iSeeU = false; }
+        }
+        else { iSeeU = false; }
 
 
-        if (iSeeU) {
+        if (iSeeU)
+        {
             switch (typeMovements)
             {
                 case TypesMoments.Mlineal:
@@ -45,10 +47,11 @@ public class EnemyController : MonoBehaviour
                     LookAtLerp(player);
                     break;
 
-            } }
+            }
+        }
 
-      
-      
+
+
     }
 
     //movimiento lineal
@@ -64,13 +67,14 @@ public class EnemyController : MonoBehaviour
         transform.Translate(direction.normalized * enemySpeed * Time.deltaTime);
 
     }
-    private void LookAtLerp(GameObject lookObject) {
+    private void LookAtLerp(GameObject lookObject)
+    {
 
         Vector3 direction = lookObject.transform.position - transform.position;
         Quaternion newQuaternion = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Lerp(transform.rotation, newQuaternion, rotationMagnitud * Time.deltaTime);
-          
-            }
+
+    }
 
     //seguir al player lineal
     private void MoveTowards1()
@@ -83,7 +87,5 @@ public class EnemyController : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, rangeOfView);
-            }
+    }
 }
-
-
