@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class EndController : MonoBehaviour
 {
-    public GameObject Door;
+    //public GameObject Door;
     float degreesPerSecond = 20;
+    public KeyInventory KeyInventory;
+    public GameObject Door;
 
-
+    //public KeyInventory catchKey;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,20 +19,19 @@ public class EndController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastStart();
+        RaycastEnd();
     }
 
-    private void RaycastStart()
+    private void RaycastEnd()
     {
         RaycastHit hit;
 
         if (Physics.Raycast(transform.position, Vector3.forward, out hit, 4f))
         {
-            Debug.Log("Time End");
-            GameManager.score += 100;
-            Debug.Log("Level 1 Completed! Your Score: " + GameManager.score);
-            Destroy(gameObject);
+            
+            //Destroy(gameObject);
             UnlockDoor();
+
         }
     }
 
@@ -40,11 +41,16 @@ public class EndController : MonoBehaviour
         Gizmos.DrawRay(transform.position, Vector3.forward * 4f);
     }
 
-    private void UnlockDoor()
+    public void UnlockDoor()
     {
-        Door.transform.eulerAngles = new Vector3(0f, 90f, 0f);
-        //Door.transform.eulerAngles = new Vector3(0, degreesPerSecond, 0) * Time.deltaTime;
-
+        if ( KeyInventory.HaveTheKey == true)
+        {
+            Door.transform.eulerAngles = new Vector3(0f, 90f, 0f);
+            //Door.transform.eulerAngles = new Vector3(0, degreesPerSecond, 0) * Time.deltaTime;
+            Debug.Log("Time End");
+            GameManager.score += 100;
+            Debug.Log("Level 1 Completed! Your Score: " + GameManager.score);
+        }
     }
 }
 

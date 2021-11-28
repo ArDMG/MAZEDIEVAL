@@ -11,7 +11,7 @@ public class KeyInventory : MonoBehaviour
     Dictionary<string, GameObject> inventoryThree;
 
     [SerializeField] internal int[] keyQuantity = { 0 };
-
+    [SerializeField] public bool HaveTheKey = false;
     void Start()
     {
         inventoryOne = new Stack();
@@ -36,6 +36,9 @@ public class KeyInventory : MonoBehaviour
         {
             case GameManager.typeKey.Key:
                 keyQuantity[0]++;
+               Debug.Log(HaveTheKey);
+                HaveTheKey = true;
+               Debug.Log(HaveTheKey);
                 break;
             
             default:
@@ -125,4 +128,6 @@ public class KeyInventory : MonoBehaviour
     {
         return inventoryThree.Count > 0;
     }
+
+    
 }
