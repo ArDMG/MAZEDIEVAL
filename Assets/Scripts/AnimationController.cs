@@ -54,7 +54,7 @@ public class AnimationController : MonoBehaviour
             }
 
         }
-        Debug.Log(Life.HeartCount);
+        //Debug.Log(Life.HeartCount);
 
     }
 
@@ -134,7 +134,6 @@ public class AnimationController : MonoBehaviour
         if (Life.HeartCount == 0)
         {
             anim.Play("death");
-            Debug.Log(Life.HeartCount);
         }
     }
 

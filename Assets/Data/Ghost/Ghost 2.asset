@@ -15,6 +15,6 @@ MonoBehaviour:
   ghostName: gg
   hp: 4
   shield: 5
-  speed: 0.001
+  speed: 0.01
   distanceRay: 2
   damageHit: 10

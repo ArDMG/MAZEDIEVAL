@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Life : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class Life : MonoBehaviour
     public GameObject Heart;
    
     [SerializeField] public int HeartCount = 1;
+
+    //Events
+    public event Action onDeath;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +31,6 @@ public class Life : MonoBehaviour
         if (other.gameObject.CompareTag("Arrow"))
         {
             DestroyObject(Heart);
-            Debug.Log("You Died");
             HeartCount = 0;
         }
 

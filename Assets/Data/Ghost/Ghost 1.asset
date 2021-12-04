@@ -15,6 +15,6 @@ MonoBehaviour:
   ghostName: asd
   hp: 2
   shield: 2
-  speed: 0.001
+  speed: 0.01
   distanceRay: 4
   damageHit: 3

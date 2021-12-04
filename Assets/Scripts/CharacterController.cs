@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class CharacterController : MonoBehaviour
 {
-    public int lifePlayer = 3;
+    public int lifePlayer = 1;
     public string namePlayer = "Mr. Blue";
     public float speedPlayer = 1f;
     // public GameObject swordPlayer;
@@ -13,14 +14,38 @@ public class CharacterController : MonoBehaviour
     public float cameraAxisX = -90f;
     private bool isGrounded = true;
 
-
     //
     private KeyInventory mgInventory;
+
+    public event Action onDeath;
+    public event Action onGhost;
+    public event Action onFlowers;
+
+
+    //
     // Start is called before the first frame update
     void Start()
     {
         mgInventory = GetComponent<KeyInventory>();
+        PlayerEvents.onDeath += GameOverCharacterControllerOFF;
+        PlayerEvents.onGhost += TouchGhost;
+        PlayerEvents.onFlowers += TouchFlowers;
 
+    }
+
+    private  void GameOverCharacterControllerOFF()
+    {
+        GameObject.Find("MainCharacter").GetComponent<CharacterController>().enabled = false;
+        StartCoroutine(DeactivateMoves());
+    }
+    private void TouchGhost()
+    {
+        speedPlayer = 0.5f;
+    }
+
+    private void TouchFlowers()
+    {
+        speedPlayer = 2f;
     }
 
     // Update is called once per frame
@@ -60,7 +85,24 @@ public class CharacterController : MonoBehaviour
        ;
     }
 
+    //
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Arrow"))
+        {
+            lifePlayer--;
+            Destroy(collision.gameObject);
+            if(lifePlayer == 0)
+            {
+                PlayerEvents.OnDeath();
+                Debug.Log("Game Over");
+            }
+        }
 
+        
+
+    }
+    //
 
     private void OnTriggerEnter(Collider other)
     {
@@ -84,6 +126,21 @@ public class CharacterController : MonoBehaviour
             mgInventory.SeeInventoryThree();
             mgInventory.CountKey(key);
         }
+
+        if (other.gameObject.CompareTag("Ghost"))
+        {
+
+            PlayerEvents.OnGhost();
+            speedPlayer = 0.5f;
+
+        }
+
+        if (other.gameObject.CompareTag("Flower"))
+        {
+            PlayerEvents.OnFlowers();
+            speedPlayer = 2f;
+
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -99,4 +156,18 @@ public class CharacterController : MonoBehaviour
         key.SetActive(true);
         key.transform.position = transform.position + new Vector3(1f, 1f, 1f);
     }
+
+
+    IEnumerator DeactivateMoves()
+    {
+      
+        yield return new WaitForSeconds(2f);
+        GameObject.Find("MainCharacter").GetComponent<Animator>().enabled = false;
+        GameObject.Find("MainCharacter").GetComponent<AnimationController>().enabled = false;
+
+
+    }
+
+
+
 }

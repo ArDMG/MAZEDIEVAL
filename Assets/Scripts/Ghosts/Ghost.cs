@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Ghost : MonoBehaviour
 {
@@ -15,12 +16,18 @@ public class Ghost : MonoBehaviour
     protected Rigidbody rbGhost;
 
     private bool isAttack = false;
+    public event Action onGhost;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(myData.GhostName);
         rbGhost = GetComponent<Rigidbody>();
+
+    }
+
+    private void TouchGhost()
+    {
+        GameObject.Find("MainCharacter").GetComponent<CharacterController>().enabled = false;
     }
 
     // Update is called once per frame

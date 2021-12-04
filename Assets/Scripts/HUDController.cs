@@ -9,11 +9,17 @@ public class HUDController : MonoBehaviour
 
     [SerializeField] private KeyInventory mgInventory;
     [SerializeField] private GameObject panelKey;
+    private CharacterController playerScript;
+
+    [SerializeField] private GameObject endScreen;
+
 
     // Start is called before the first frame update
+    [System.Obsolete]
     void Start()
     {
-
+        PlayerEvents.onDeath += GameOver;
+        endScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -32,5 +38,17 @@ public class HUDController : MonoBehaviour
     public void TooglePanel()
     {
         panelKey.SetActive(!panelKey.activeSelf);
+    }
+
+    private void OnDeadHandler()
+    {
+        textKey.text = "GAME OVER";
+    }
+
+    [System.Obsolete]
+    public void GameOver()
+    {
+        endScreen.SetActive(true);
+        GameObject.Find("KeyPanel").active = false;
     }
 }
