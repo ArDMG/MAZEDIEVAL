@@ -131,7 +131,7 @@ public class CharacterController : MonoBehaviour
         {
 
             PlayerEvents.OnGhost();
-            speedPlayer = 0.5f;
+            speedPlayer = 1f;
 
         }
 
