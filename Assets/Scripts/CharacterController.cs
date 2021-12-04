@@ -40,7 +40,7 @@ public class CharacterController : MonoBehaviour
     }
     private void TouchGhost()
     {
-        speedPlayer = 0.5f;
+        speedPlayer = 1f;
     }
 
     private void TouchFlowers()
@@ -162,7 +162,8 @@ public class CharacterController : MonoBehaviour
     {
       
         yield return new WaitForSeconds(2f);
-        GameObject.Find("MainCharacter").GetComponent<Animator>().enabled = false;
+        GameObject.Find("MainCharacter").GetComponent<CharacterController>().enabled = false;
+        //GameObject.Find("MainCharacter").GetComponent<Animator>().enabled = false;
         GameObject.Find("MainCharacter").GetComponent<AnimationController>().enabled = false;
 
 

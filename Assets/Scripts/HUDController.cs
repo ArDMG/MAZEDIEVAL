@@ -48,7 +48,18 @@ public class HUDController : MonoBehaviour
     [System.Obsolete]
     public void GameOver()
     {
-        endScreen.SetActive(true);
+        //endScreen.SetActive(true);
         GameObject.Find("KeyPanel").active = false;
+        StartCoroutine(ActivateEndScreen());
+    }
+
+    [System.Obsolete]
+    IEnumerator ActivateEndScreen()
+    { 
+        yield return new WaitForSeconds(4f);
+        Debug.Log("activating...");
+        //GameObject.Find("EndPanel").active = true;
+        endScreen.SetActive(true);
+
     }
 }
