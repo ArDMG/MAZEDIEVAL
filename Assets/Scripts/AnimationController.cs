@@ -13,7 +13,7 @@ public class AnimationController : MonoBehaviour
     private Rigidbody rbFoot;
     [Range(200f, 1000f)]
     [SerializeField] private float jumpForce = 1f;
-    private bool isGrounded = true;
+    public bool isGrounded = true;
     //
     private bool CrouchActive = false;
     public Life Life;
@@ -24,8 +24,8 @@ public class AnimationController : MonoBehaviour
         anim = GetComponent<Animator>();
         //
         rbFoot = GetComponent<Rigidbody>();
-        animPlayer.SetBool("IsRun", false);
-        animPlayer.SetBool("IsJump", false);
+        //animPlayer.SetBool("IsRun", false);
+        //animPlayer.SetBool("IsJump", false);
         //transform.position = initPosition;
         //swordPlayer.GetComponent<SwordController>().SetSwordName("Espadon 9000");
         //swordPlayer.transform.position = transform.position + swordPosition;

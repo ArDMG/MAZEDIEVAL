@@ -12,7 +12,7 @@ public class CharacterController : MonoBehaviour
     public Vector3 initPosition = new Vector3(-2.5f, 1f, 4.5f);
     //public Vector3 swordPosition = new Vector3(0, 0, 0.3f);
     public float cameraAxisX = -90f;
-    private bool isGrounded = true;
+    public bool isGrounded = true;
 
     //
     private KeyInventory mgInventory;

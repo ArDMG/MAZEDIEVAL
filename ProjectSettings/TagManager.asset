@@ -9,6 +9,7 @@ TagManager:
   - Arrow
   - Ghost
   - Flower
+  - ENDFX
   layers:
   - Default
   - TransparentFX
