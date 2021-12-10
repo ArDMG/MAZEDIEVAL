@@ -48,7 +48,7 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   Speed: 4
   Damage: 1
-  liveCanon: 0.15
+  liveCanon: 0.01
   Arrow: {fileID: 110294}
 --- !u!1 &199956
 GameObject:
