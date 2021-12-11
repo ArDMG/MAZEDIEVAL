@@ -117,10 +117,10 @@ public class KeyInventory : MonoBehaviour
 
     public void SeeInventoryThree()
     {
-        Debug.Log(inventoryThree.ToString());
+       // Debug.Log(inventoryThree.ToString());
         foreach (var item in inventoryThree)
         {
-            Debug.Log(item.ToString());
+            //Debug.Log(item.ToString());
         }
     }
 
