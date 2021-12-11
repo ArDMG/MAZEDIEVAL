@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class NextLevelCController : MonoBehaviour
+public class NextLevelController : MonoBehaviour
 {
     //public GameObject Door;
     float degreesPerSecond = 20;

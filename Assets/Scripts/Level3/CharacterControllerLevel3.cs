@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class CharacterController : MonoBehaviour
+public class CharacterControllerLevel3 : MonoBehaviour
 {
     public int lifePlayer = 1;
-    public string namePlayer = "Mr. Blue";
+    //public string namePlayer = "Mr. Blue";
     public float speedPlayer = 1f;
     // public GameObject swordPlayer;
-    public Vector3 initPosition = new Vector3(-2.5f, 1f, 4.5f);
+    //public Vector3 initPosition = new Vector3(-2.5f, 1f, 4.5f);
     //public Vector3 swordPosition = new Vector3(0, 0, 0.3f);
     public float cameraAxisX = -90f;
     public bool isGrounded = true;
 
     //
     private KeyInventory mgInventory;
-
+    public GameObject PlayerStartPosition;
     public event Action onDeath;
     public event Action onGhost;
     public event Action onFlowers;
@@ -30,6 +30,8 @@ public class CharacterController : MonoBehaviour
         PlayerEvents.onDeath += GameOverCharacterControllerOFF;
         PlayerEvents.onGhost += TouchGhost;
         PlayerEvents.onFlowers += TouchFlowers;
+
+
     }
 
     private  void GameOverCharacterControllerOFF()
@@ -91,7 +93,6 @@ public class CharacterController : MonoBehaviour
         {
             lifePlayer--;
             Destroy(collision.gameObject);
-            Debug.Log("boom");
             if(lifePlayer == 0)
             {
                 PlayerEvents.OnDeath();

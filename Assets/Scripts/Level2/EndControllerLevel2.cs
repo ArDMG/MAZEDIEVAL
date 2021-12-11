@@ -8,6 +8,8 @@ public class EndControllerLevel2 : MonoBehaviour
     float degreesPerSecond = 20;
     public KeyInventory KeyInventory;
     public GameObject Door;
+    [SerializeField] private GameObject levelComplete;
+
 
     //public KeyInventory catchKey;
     // Start is called before the first frame update
@@ -17,11 +19,13 @@ public class EndControllerLevel2 : MonoBehaviour
     }
 
     // Update is called once per frame
+    [System.Obsolete]
     void Update()
     {
         RaycastEnd();
     }
 
+    [System.Obsolete]
     private void RaycastEnd()
     {
         RaycastHit hit;
@@ -41,6 +45,7 @@ public class EndControllerLevel2 : MonoBehaviour
         Gizmos.DrawRay(transform.position, Vector3.right * 4f);
     }
 
+    [System.Obsolete]
     public void UnlockDoor()
     {
         if ( KeyInventory.HaveTheKey == true)
@@ -50,6 +55,8 @@ public class EndControllerLevel2 : MonoBehaviour
             Debug.Log("Time End");
             GameManager.score += 100;
             Debug.Log("Level 1 Completed! Your Score: " + GameManager.score);
+            levelComplete.active = true;
+
         }
     }
 }

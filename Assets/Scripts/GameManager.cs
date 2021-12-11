@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         GameObject.Find("Wall").active = false;
         GameObject.Find("Lights").active = false;
         GameObject.Find("Lamp").active = false;
-        GameObject.Find("Arrow(Clone)").active = false;
+        GameObject.Find("DiamondArrow(Clone)").active = false;
         GameObject.Find("Flowers").active = false;
         GameObject.Find("Key").active = false;
 

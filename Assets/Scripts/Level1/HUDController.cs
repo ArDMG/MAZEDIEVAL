@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HUDController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class HUDController : MonoBehaviour
     private CharacterController playerScript;
 
     [SerializeField] private GameObject endScreen;
+
 
 
     // Start is called before the first frame update
@@ -61,5 +63,14 @@ public class HUDController : MonoBehaviour
         //GameObject.Find("EndPanel").active = true;
         endScreen.SetActive(true);
 
+    }
+
+    public void OnClickReplay()
+    {
+        Debug.Log("Start!");
+        Debug.Log(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadSceneAsync("Level1");
+        SceneManager.LoadScene("Level1");
     }
 }
