@@ -1,32 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 
 public class HTPController : MonoBehaviour
 {
+
+    public GameObject HTPText;
     [System.Obsolete]
     private void Start()
     {
-        GameObject.Find("HowToPlay").active = false;
-
+        GameObject.Find("HowToPlayText").active = false;
     }
+
+   
+
     [System.Obsolete]
     public void OnClickHowToPlay()
     {
-        Debug.Log("How To Play!");
-        GameObject.Find("ButtonHTP").active = false;
+        Debug.Log("How To Play");
+        GameObject.Find("ButtonHowToPlay").active = false;
         GameObject.Find("ButtonPlay").active = false;
         GameObject.Find("ButtonExit").active = false;
-        ActiveHowToPlay();
-    }
-
-    [System.Obsolete]
-    private void ActiveHowToPlay()
-    {
-        GameObject.Find("HowToPlay").active = true;
-
+        HTPText.SetActive(true);
     }
 }
 
