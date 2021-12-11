@@ -26,6 +26,8 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
         mgInventory = GetComponent<KeyInventory>();
         PlayerEvents.onDeath += GameOverCharacterControllerOFF;
         PlayerEvents.onGhost += TouchGhost;
@@ -168,7 +170,5 @@ public class CharacterController : MonoBehaviour
 
 
     }
-
-
 
 }

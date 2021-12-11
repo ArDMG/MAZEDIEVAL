@@ -9,23 +9,31 @@ using UnityEngine.SceneManagement;
 public class HTPController : MonoBehaviour
 {
 
+
     public GameObject HTPText;
-    [System.Obsolete]
+    public GameObject ButtonHowtoPlay;
+    public GameObject ButtonExit;
+    public GameObject ButtonPlay;
+    public GameObject BackButton;
+
     private void Start()
     {
+        ButtonHowtoPlay.SetActive(true);
+        ButtonExit.SetActive(true);
+        ButtonPlay.SetActive(true);
         HTPText.SetActive(false);
+        BackButton.SetActive(false);
+
     }
 
-   
 
-    [System.Obsolete]
     public void OnClickHowToPlay()
     {
-        Debug.Log("How To Play");
-        GameObject.Find("ButtonHowToPlay").active = false;
-        GameObject.Find("ButtonPlay").active = false;
-        GameObject.Find("ButtonExit").active = false;
+        ButtonHowtoPlay.SetActive(false);
+        ButtonExit.SetActive(false);
+        ButtonPlay.SetActive(false);
         HTPText.SetActive(true);
+        BackButton.SetActive(true);
     }
 }
 

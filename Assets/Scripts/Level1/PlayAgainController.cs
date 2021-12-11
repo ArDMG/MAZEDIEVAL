@@ -13,6 +13,6 @@ public class PlayAgainController : MonoBehaviour
         Debug.Log(SceneManager.GetActiveScene().buildIndex);
         Debug.Log(SceneManager.GetActiveScene().name);
         //SceneManager.LoadSceneAsync("Level1");
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("Level1");
     }
 }

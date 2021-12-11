@@ -7,6 +7,8 @@ public class EndController3 : MonoBehaviour
     //public GameObject Door;
     public GameObject FX;
     public GameObject Sword;
+    public GameObject GameEndText;
+
 
     private bool FXActive = false;
 
@@ -34,6 +36,9 @@ public class EndController3 : MonoBehaviour
             ActivateFX();
             StartCoroutine(Timer());
             DeactivateFX();
+            GameEndText.SetActive(true);
+            StartCoroutine(TimerEndGame());
+            
         }
     }
 
@@ -72,7 +77,17 @@ public class EndController3 : MonoBehaviour
 
 
     }
-    
+
+    IEnumerator TimerEndGame()
+    {
+        yield return new WaitForSeconds(8f);
+        Debug.Log("Timer End");
+        //GameObject.Find("EndPanel").active = true;
+        Application.Quit();
+
+
+    }
+
 }
 
 

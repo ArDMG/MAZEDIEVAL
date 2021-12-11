@@ -10,6 +10,7 @@ TagManager:
   - Ghost
   - Flower
   - ENDFX
+  - Sword
   layers:
   - Default
   - TransparentFX

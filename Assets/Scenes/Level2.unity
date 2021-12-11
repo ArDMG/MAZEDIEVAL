@@ -54645,7 +54645,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2489735333211810235}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0.079}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2493216443239529289}
@@ -54658,9 +54658,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2489708244747768299}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 25.625, y: -1.02, z: -8.102}
-  m_LocalScale: {x: 1, y: 5, z: 5}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 25.625, y: -1.02, z: -8.793}
+  m_LocalScale: {x: 6.12, y: 8.7, z: 3}
   m_Children:
   - {fileID: 2492859597528755459}
   - {fileID: 2488022002164458229}
@@ -54668,7 +54668,7 @@ Transform:
   - {fileID: 2487712133629578709}
   m_Father: {fileID: 2488626643373819096}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &2832251561806678779
 GameObject:
   m_ObjectHideFlags: 0
@@ -54698,6 +54698,10 @@ PrefabInstance:
       propertyPath: Heart
       value: 
       objectReference: {fileID: 53789751}
+    - target: {fileID: 3470782833301961797, guid: d4f7113caf7648a4281c247d11135aa1, type: 3}
+      propertyPath: speedPlayer
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4008216744304619392, guid: d4f7113caf7648a4281c247d11135aa1, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -75744,9 +75748,9 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
-    m_PressedColor: {r: 0.6509434, g: 0.5844009, b: 0.18729973, a: 0.42745098}
-    m_SelectedColor: {r: 0.6792453, g: 0.54784083, b: 0.25952297, a: 0.36078432}
-    m_DisabledColor: {r: 0.7557414, g: 0.764151, b: 0.082903184, a: 0.28235295}
+    m_PressedColor: {r: 0.6509434, g: 0.5844009, b: 0.18729973, a: 0.21960784}
+    m_SelectedColor: {r: 0.6792453, g: 0.54784083, b: 0.25952297, a: 0.3254902}
+    m_DisabledColor: {r: 0.7557414, g: 0.764151, b: 0.082903184, a: 0.2}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:

@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotateSword : MonoBehaviour
+public class PauseMenuController : MonoBehaviour
 {
- 
 
-    public GameObject Sword;
+    public GameObject PauseMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +14,11 @@ public class RotateSword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0f, 20f, 0f) * Time.deltaTime);
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("Pause");
+            PauseMenu.SetActive(true);
+
+        }
     }
 }

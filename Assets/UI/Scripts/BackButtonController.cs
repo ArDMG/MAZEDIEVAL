@@ -1,37 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-
-
 
 public class BackButtonController : MonoBehaviour
 {
-
     public GameObject HTPText;
-    public GameObject BackButton;
     public GameObject ButtonHowtoPlay;
     public GameObject ButtonExit;
     public GameObject ButtonPlay;
+    public GameObject BackButton;
 
-    [System.Obsolete]
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        GameObject.Find("HowToPlayText").active = false;
+
     }
 
-    [System.Obsolete]
+    // Update is called once per frame
+    void Update()
+    {
+       
+       
+    }
+
     public void OnClickBackButton()
     {
-        Debug.Log("How To Play");
         ButtonHowtoPlay.SetActive(true);
         ButtonExit.SetActive(true);
         ButtonPlay.SetActive(true);
         HTPText.SetActive(false);
         BackButton.SetActive(false);
-
     }
 }
-
-

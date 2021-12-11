@@ -17,6 +17,8 @@ public class CharacterControllerLevel3 : MonoBehaviour
     //
     private KeyInventory mgInventory;
     public GameObject PlayerStartPosition;
+    public GameObject Sword;
+    public GameObject SwordFX;
     public event Action onDeath;
     public event Action onGhost;
     public event Action onFlowers;
@@ -99,8 +101,14 @@ public class CharacterControllerLevel3 : MonoBehaviour
                 Debug.Log("Game Over");
             }
         }
+        if (collision.gameObject.CompareTag("Sword"))
+        {
+                Destroy(Sword);
+                Debug.Log("Swoooooord");
+                SwordFX.SetActive(true);    
+          
+        }
 
-        
 
     }
     //
