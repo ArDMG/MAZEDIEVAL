@@ -13,7 +13,7 @@ public class HTPController : MonoBehaviour
     [System.Obsolete]
     private void Start()
     {
-        GameObject.Find("HowToPlayText").active = false;
+        HTPText.SetActive(false);
     }
 
    
