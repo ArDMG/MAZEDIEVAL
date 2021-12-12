@@ -866,7 +866,7 @@ GameObject:
   - component: {fileID: 622382369}
   - component: {fileID: 622382368}
   m_Layer: 5
-  m_Name: Tittle (1)
+  m_Name: Developed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1730,10 +1730,10 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "                                              CONTROLS\n\nA,W,S,D - Move
-    \nMouse - Move the camera\n\n                                             INSTRUCTIONS\n\n\n-Find
-    the key to unlock the door\n-Find the door to complete the level\n-The Ghost
-    can touch you and reduce your velocity\n-Find any flower to restore your velocity\n-Dodge
-    the arrows so as not to die\n\n    \n"
+    \nMouse - Move the camera\nEscape - Pause Menu\n\n                                            
+    INSTRUCTIONS\n\n\n-Find the key to unlock the door\n-Find the door to complete
+    the level\n-The Ghost can touch you and reduce your velocity\n-Find any flower
+    to restore your velocity\n-Dodge the arrows so as not to die\n\n    \n"
 --- !u!222 &2134538990
 CanvasRenderer:
   m_ObjectHideFlags: 0
