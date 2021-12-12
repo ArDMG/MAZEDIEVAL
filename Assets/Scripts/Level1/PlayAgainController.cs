@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayAgainController : MonoBehaviour
 {
-    
+    [System.Obsolete]
     public void OnClickReplay()
     {
         Debug.Log("Start!");
