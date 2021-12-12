@@ -31,7 +31,7 @@ public class RayNextLevel3 : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, Vector3.right, out hit, 4f))
+        if (Physics.Raycast(transform.position, Vector3.right, out hit, 1f))
         {
 
             CrossLine = true;
@@ -42,7 +42,7 @@ public class RayNextLevel3 : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawRay(transform.position, Vector3.right * 4f);
+        Gizmos.DrawRay(transform.position, Vector3.right * 1f);
     }
     
     private void NextLevel()
