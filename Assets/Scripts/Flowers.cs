@@ -9,9 +9,11 @@ public class Flowers : MonoBehaviour
     public event Action onFlowers;
 
     // Start is called before the first frame update
+    [Obsolete]
     void Start()
     {
         PlayerEvents.onFlowers += TouchFlowers;
+        GameObject.Find("Flowers").active = true;
 
     }
 
@@ -21,8 +23,11 @@ public class Flowers : MonoBehaviour
 
     }
 
+    [Obsolete]
     public void TouchFlowers()
     {
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
+        GameObject.Find("Flowers").active = false;
+
     }
 }

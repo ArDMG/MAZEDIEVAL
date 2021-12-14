@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54f3df59fcb15d54e882e76a30df1909, type: 3}
   m_Name: Ghost 2
   m_EditorClassIdentifier: 
-  ghostName: gg
+  ghostName: Small
   hp: 4
   shield: 5
-  speed: 0.01
-  distanceRay: 2
+  speed: 0.015
+  distanceRay: 4
   damageHit: 10

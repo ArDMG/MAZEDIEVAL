@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54f3df59fcb15d54e882e76a30df1909, type: 3}
   m_Name: Ghost 1
   m_EditorClassIdentifier: 
-  ghostName: asd
+  ghostName: Big
   hp: 2
   shield: 2
-  speed: 0.01
-  distanceRay: 4
+  speed: 0.2
+  distanceRay: 1
   damageHit: 3

@@ -13,7 +13,7 @@ public class TrapController : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("Arrow", startDelay, spawnInterval);
+        //InvokeRepeating("Arrow", startDelay, spawnInterval);
     }
 
     // Update is called once per frame
