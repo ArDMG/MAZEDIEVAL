@@ -20,7 +20,7 @@ public class CharacterController : MonoBehaviour
     public event Action onDeath;
     public event Action onGhost;
     public event Action onFlowers;
-
+    public GameObject Player;
 
     //
     // Start is called before the first frame update
@@ -34,9 +34,17 @@ public class CharacterController : MonoBehaviour
         PlayerEvents.onFlowers += TouchFlowers;
     }
 
-    private  void GameOverCharacterControllerOFF()
+    private void GameOverCharacterControllerOFF()
     {
-        GameObject.Find("MainCharacter").GetComponent<CharacterController>().enabled = false;
+
+        Player = GameObject.Find("MainCharacter");
+
+        if(Player != null)
+        { 
+        Debug.Log("Object");
+        Player.GetComponent<CharacterController>().enabled = true;
+        Player.GetComponent<AnimationController>().enabled = true;
+        }
         StartCoroutine(DeactivateMoves());
     }
     private void TouchGhost()
